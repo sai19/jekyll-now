@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Problems with gradient descent
+title: Problem with the gradient descent
 ---
 In this post we will analyse one important property of gradient descent optimization. Deep neural networks have been successful
 on various of machine learning tasks such as classification, object recognition. But the recent studies have found one of the crucial shortcomings of deep learning, i.e. adversial attacks on deep neural networks. 
@@ -30,5 +30,6 @@ history = model.fit(x_train, y_train,
 score = model.evaluate(x_test, y_test, verbose=0)
 
 ```
-Now let us have a look at the training loss profile,
+Now let us have a look at the training loss profile, As expected the training and validation accuracy both reach 1.0 just after 
+1 epoch. But the performance on the test data(remember we did not add any hints)
 
