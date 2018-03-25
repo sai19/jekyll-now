@@ -31,5 +31,38 @@ score = model.evaluate(x_test, y_test, verbose=0)
 
 ```
 Now let us have a look at the training loss profile, As expected the training and validation accuracy both reach 1.0 just after 
-1 epoch. But the performance on the test data(remember we did not add any hints)
+1 epoch. But the performance on the test data(remember we did not add any hints) is,
+logloss : 0.8712
+accuracy: 0.7264
+This clearly indicates that, the network has learned to locate the position of the boxes(i.e. hints) in the image really well, as that is an easier task. But the network has failed to learn the other information, which can also be exploited to 
+make the predictions. This is what makes the deep neural networks succeptible to adverserial attacks.
+But how can we make the network pay attention to other useful information as well?
+Well, there are two ways to make this happen:
+1. Modify gradient descent
+2. Modify the objective function
+
+I currently can not think of a way to modify gradient descent, so let us focus on the second option. Instead of asking the network to classify the images, let us also ask the network to reconstruct the images as well. This should make the network pay attention to other information as well. The code is shown below,
+```
+input_img = Input(shape=(784,))
+encoded = Dense(512, activation='relu')(input_img)
+encoded = Dropout(0.2)(encoded)
+encoded = Dense(512, activation='relu')(encoded)
+encoded = Dropout(0.2)(encoded)
+decoded = Dense(784, activation='sigmoid')(encoded)
+out = Dense(10,activation="softmax",name="final")(encoded)
+model = Model(input_img, [decoded,out])
+model.summary()
+model.compile(optimizer='rmsprop', 
+              loss=['binary_crossentropy', 'categorical_crossentropy'],
+              loss_weights=[1.0, 0.01],metrics=["accuracy"])
+history = model.fit(x_train, [x_train,y_train],
+                    batch_size=batch_size,
+                    epochs=epochs,
+                    verbose=2,
+                    validation_split=0.2)
+score = model.evaluate(x_test, [x_test,y_test], verbose=0)
+
+```
+We can use the loass weights to control the importance given to each loss. Unlike in previous case, the network fails to
+achieve an accuracy of 100%, but the performance on the test data is slightly better(both the networks were trained for 20 epochs)
 
