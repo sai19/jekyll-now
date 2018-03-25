@@ -30,5 +30,5 @@ history = model.fit(x_train, y_train,
 score = model.evaluate(x_test, y_test, verbose=0)
 
 ```
-
+Now let us have a look at the training loss profile,
 
