@@ -64,12 +64,15 @@ score = model.evaluate(x_test, [x_test,y_test], verbose=0)
 
 ```
 We can use the loass weights to control the importance given to each loss. Unlike in previous case, the network fails to
-achieve an accuracy of 100%, but the performance on the test data is slightly better(both the networks were trained for 20 epochs)
-Performance on test data(weights = [1.0,0.1]):
+achieve an accuracy of 100%, but the performance on the test data is slightly better(both the networks were trained for 20 epochs)  
+Performance on test data(weights = [1.0,0.1]):  
 logloss: 0.775
 accuracy: 0.756
 Performance on test data(weights = [1.0,0.01]):
 logloss: 0.7714
 accuracy: 0.7805
+Performance on test data(weights = [1.0,0.5]):
+logloss: 0.7747
+accuracy: 0.8105
 
 
