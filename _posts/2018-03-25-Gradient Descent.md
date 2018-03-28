@@ -77,7 +77,7 @@ history = model.fit(x_train, [x_train,y_train],
 score = model.evaluate(x_test, [x_test,y_test], verbose=0)
 
 ```
-We can use the loass weights to control the importance given to each loss. Unlike in previous case, the network fails to
+We can use the loss weights to control the importance given to each loss. Unlike in previous case, the network fails to
 achieve an accuracy of 100%, but the performance on the test data is slightly better(both the networks were trained for 20 epochs)  
 Performance on test data(weights = [1.0,0.1]):  
 logloss: 0.775  
