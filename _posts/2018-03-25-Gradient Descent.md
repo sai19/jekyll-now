@@ -7,11 +7,11 @@ on various machine learning tasks such as classification, object recognition. Bu
 
 One of the problems with gradient descent is, it tries to find the easiest possible solution for the given task. To see this, let us do a simple experiment with MNIST dataset. We will add some easy hints to training data but will exclude those hints from test data(see images below)
 <figure class="half">
-	<img src="https://sai19.github.io/images/img_0.jpg">
-	<img src="https://sai19.github.io/images/img_1.jpg">
-	<img src="https://sai19.github.io/images/img_2.jpg">
-	<img src="https://sai19.github.io/images/img_3.jpg">
-	<figcaption>Caption describing these two images.</figcaption>
+	<img src="https://sai19.github.io/images/img_0.jpg" height="42" width="42">
+	<img src="https://sai19.github.io/images/img_1.jpg" height="42" width="42">
+	<img src="https://sai19.github.io/images/img_2.jpg" height="42" width="42">
+	<img src="https://sai19.github.io/images/img_3.jpg" height="42" width="42">
+	<figcaption>Sample training images</figcaption>
 </figure>
 
 Now let us train the above images using a simple neural network, the keras version of the code is shown below,
