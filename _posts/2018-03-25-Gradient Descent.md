@@ -5,7 +5,12 @@ title: Gradient descent and adversial attacks on neural networks
 In this post we will analyse one important property of gradient descent optimization. Deep neural networks have been successful
 on various machine learning tasks such as classification, object recognition. But the recent studies have found one of the crucial shortcomings of deep learning, i.e. adversial attacks on deep neural networks. 
 
-One of the problems with gradient descent is, it tries to find the easiest possible solution for the given task. To see this, let us do a simple experiment with MNIST dataset. We will add some easy hints to training data but will exclude those hints from test data 
+One of the problems with gradient descent is, it tries to find the easiest possible solution for the given task. To see this, let us do a simple experiment with MNIST dataset. We will add some easy hints to training data but will exclude those hints from test data(see images below)
+<figure class="half">
+	<img src="https://mmistakes.github.io/skinny-bones-jekyll/images/image-filename-1.jpg">
+	<img src="https://mmistakes.github.io/skinny-bones-jekyll/images/image-filename-2.jpg">
+	<figcaption>Caption describing these two images.</figcaption>
+</figure>
 <img src="https://sai19.github.io/images/img_0.jpg" alt="">
 
 Now let us train the above images using a simple neural network, the keras version of the code is shown below,
