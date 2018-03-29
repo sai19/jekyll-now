@@ -81,8 +81,8 @@ We can use the loss weights to control the importance given to each loss. Unlike
 achieve an accuracy of 100%, but the performance on the test data is slightly better(both the networks were trained for 20 epochs)  
 The following figure shows the logloss vs the fraction of penality(in negative log) given to accuracy
 <figure class="half">
-	<img src="https://sai19.github.io/images/Figure_1.png" height="400" width="400">
-	<img src="https://sai19.github.io/images/Figure_2.png" height="400" width="400">
+	<img src="https://sai19.github.io/images/Figure_1.png" height="200" width="200">
+	<img src="https://sai19.github.io/images/Figure_2.png" height="200" width="200">
 </figure>
 One can observe that we do indeed improve upon the previous approach(i.e. not using autoencoder) but the maximum accuracy reached is 0.82. 
 
