@@ -68,7 +68,7 @@ model = Model(input_img, [decoded,out])
 model.summary()
 model.compile(optimizer='rmsprop', 
               loss=['binary_crossentropy', 'categorical_crossentropy'],
-              loss_weights=[1.0, 0.1],metrics=["accuracy"])
+              loss_weights=[1.0, 10**(-i)],metrics=["accuracy"])
 history = model.fit(x_train, [x_train,y_train],
                     batch_size=batch_size,
                     epochs=epochs,
@@ -79,14 +79,10 @@ score = model.evaluate(x_test, [x_test,y_test], verbose=0)
 ```
 We can use the loss weights to control the importance given to each loss. Unlike in previous case, the network fails to
 achieve an accuracy of 100%, but the performance on the test data is slightly better(both the networks were trained for 20 epochs)  
-Performance on test data(weights = [1.0,0.1]):  
-logloss: 0.775  
-accuracy: 0.756  
-Performance on test data(weights = [1.0,0.01]):  
-logloss: 0.7714  
-accuracy: 0.7805  
-Performance on test data(weights = [1.0,0.5]):  
-logloss: 0.7747  
-accuracy: 0.8105  
+The following figure shows the logloss vs the fraction of penality(in negative log) given to accuracy
+<figure class="half">
+	<img src="https://sai19.github.io/images/figure_1.jpg" height="100" width="100">
+</figure>
+
 
 
