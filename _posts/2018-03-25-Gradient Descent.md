@@ -81,7 +81,7 @@ We can use the loss weights to control the importance given to each loss. Unlike
 achieve an accuracy of 100%, but the performance on the test data is slightly better(both the networks were trained for 20 epochs)  
 The following figure shows the logloss vs the fraction of penality(in negative log) given to accuracy
 <figure class="half">
-	<img src="https://sai19.github.io/images/figure_1.jpg" height="100" width="100">
+	<img src="https://sai19.github.io/images/Figure_1.png" height="100" width="100">
 </figure>
 
 
