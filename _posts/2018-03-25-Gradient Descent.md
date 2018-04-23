@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Gradient descent and adversial attacks on neural networks  
+title: Adversial attacks on neural networks  
 ---
 In this post we will analyse one important property of gradient descent optimization. Deep neural networks have been successful
 on various machine learning tasks such as classification, object recognition. But the recent studies have found one of the crucial shortcomings of deep learning, i.e. adversial attacks on deep neural networks. 
